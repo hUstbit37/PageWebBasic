@@ -1,0 +1,76 @@
+
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            body {
+                font-family: tahoma;
+                font-size: 16px;
+            }
+
+            #menu {
+                width: 650px;
+                height: 40px;
+                background: #6d112f;
+                margin: 50px auto;
+            }
+
+            ul.root > li {
+                list-style: none;
+                float: left;
+                position: relative; /*để độ rộng của menu con k ảnh hưởng đến menu cha */
+            }
+            /* dấu > để chỉ css chỉ tác động vào đối tượng đầu tiên */
+            ul.root > li > a {
+                text-decoration: none; /*bỏ gạch chân của thẻ a */
+                color: aliceblue;
+                padding: 0px 15px 0px 15px; /* padding: trên phải dưới trái; */
+                line-height: 40px; /* để các thẻ a nằm ra giữa menu */
+                display: block; /* Mặc định thẻ a là kiểu inline, nên khi set a:hover bên dưới
+                nó không phủ hết menu, cho nên ta sẽ chuyển sang kiểu block để phủ hết */     
+            }
+            /*hiệu ứng khi rê chuột vào thẻ a */
+            ul.root > li > a:hover {
+                background: orange;
+                color: red;
+                /* thêm css3 để hiệu ứng rê chuột vào sẽ nhẹ nhàng hơi delay */
+                transition: ease-in 0.35s;
+                -moz-transition: ease-in 0.35s;
+                -webkit-transition: ease-in 0.35s;
+            }
+
+            ul.submenu {
+                width: 250px;
+                background: #6d112f;
+                min-height: 100px;
+                display: none; /* menu con để ẩn */
+                position: absolute; /*để độ rộng của menu con k ảnh hưởng đến menu cha */
+            }
+
+            ul.submenu li {
+                list-style: none;
+            }
+
+            ul.submenu li a {
+                color: white;
+                text-decoration: none;
+                display: block;
+                border-bottom: 1px solid orchid;
+                line-height: 40px;
+                text-indent: 10px;
+            }
+            /* Khi rê chuột vào mới hiện menu con */
+            ul.root > li:hover ul.submenu {
+                display: block;
+            }
+
+            ul.submenu li a:hover {
+                background: orange;
+                color: red;
+                /* thêm css3 để hiệu ứng rê chuột vào sẽ nhẹ nhàng hơi delay */
+                transition: ease-in 0.35s;
+                -moz-transition: ease-in 0.35s;
+                -webkit-transition: ease-in 0.35s;           
+            }
+        
